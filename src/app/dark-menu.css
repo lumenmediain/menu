@@ -1,0 +1,1125 @@
+
+/* ==========================================================
+   PREMIUM CAFE MENU — PRINTED ART DIRECTION
+   Cinematic • Editorial • Warm • Contemporary
+
+   IMPORTANT:
+   This stylesheet changes visual presentation only.
+   Page-turn geometry, gestures and pagination remain intact.
+   ========================================================== */
+
+@font-face {
+  font-family: Anton;
+  src: url("/fonts/anton.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Caveat;
+  src: url("/fonts/caveat.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+:root {
+  --ink: #fff5e8;
+  --muted: #cbbcab;
+  --foil: #f3b65a;
+  --table: #151311;
+  --ember: #ff9416;
+  --cream: #fff0d5;
+  --hairline: #b78b5838;
+}
+
+::selection {
+  background: #ff9416;
+  color: #11100f;
+}
+
+/* ==========================================================
+   01 — THE TABLE & PHYSICAL BOOK
+   ========================================================== */
+
+.menu-experience {
+  --orange: #ff9416;
+  --gold: #f3b65a;
+  --ivory: #fff5e8;
+  --soft: #cbbcab;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 24%,
+      #45352a 0%,
+      #211b17 43%,
+      #0e0d0c 100%
+    );
+}
+
+.book-cover-base {
+  background: #181411;
+  border-color: #806044;
+
+  box-shadow:
+    0 34px 68px -23px #000e,
+    0 12px 25px #0008,
+    inset 0 0 0 1px #d7a56b13;
+}
+
+/* ==========================================================
+   02 — DARK PRINTED PAPER
+   ========================================================== */
+
+.printed-page {
+  background:
+    radial-gradient(
+      ellipse at 83% 5%,
+      #52352250,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 8% 95%,
+      #38231845,
+      transparent 55%
+    ),
+    #12100f;
+
+  color: var(--ivory);
+}
+
+.printed-page::before {
+  border-color: #aa79414a;
+  outline-color: #c69b5826;
+}
+
+.printed-page::after {
+  opacity: 0.17;
+}
+
+.page-topline {
+  color: #e1c8a5;
+  border-color: #b38a554d;
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.chapter-kicker,
+.continuation .chapter-kicker {
+  color: #d7b487;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   03 — EDITORIAL TYPE HIERARCHY
+   ========================================================== */
+
+.chapter-heading {
+  position: relative;
+  margin: 20px 0 16px;
+}
+
+.chapter-heading h2,
+.modern-type .chapter-heading h2 {
+  position: relative;
+  z-index: 2;
+
+  font-family: Anton, Impact, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: clamp(44px, 16cqw, 92px);
+  line-height: 0.99;
+  letter-spacing: -0.017em;
+
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+
+  max-width: 100%;
+  margin: 9px 0 5px;
+
+  background: linear-gradient(
+    170deg,
+    #ffd078 0%,
+    #ffad35 30%,
+    #ff9416 67%,
+    #d66a17 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 4px 15px #ff941612);
+}
+
+.handwritten-accent {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  font-family: Caveat, cursive;
+  font-weight: 400;
+  font-size: clamp(26px, 7.5cqw, 43px);
+  line-height: 1.1;
+
+  color: #ffe0b6;
+
+  rotate: -3deg;
+  margin: 8px 0 17px;
+
+  text-shadow: 0 2px 12px #0005;
+}
+
+.handwritten-accent::after {
+  content: "";
+  display: block;
+
+  width: 62%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #ff9416,
+    #ffd18a 80%,
+    transparent
+  );
+
+  clip-path: polygon(
+    0 40%,
+    96% 0,
+    100% 50%,
+    8% 100%
+  );
+
+  margin-top: 7px;
+}
+
+.chapter-heading p {
+  position: relative;
+  z-index: 2;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+
+  color: #d4c2ae;
+  max-width: 95%;
+}
+
+/* ==========================================================
+   04 — PHOTOGRAPHIC TREATMENT
+   Rich colour grading without harsh card boundaries.
+   ========================================================== */
+
+.photograph {
+  background: #1c1917;
+}
+
+.category-photo {
+  float: none;
+  box-shadow: none;
+
+  filter:
+    saturate(1.18)
+    contrast(1.09)
+    brightness(0.96);
+}
+
+.category-photo img {
+  filter:
+    saturate(1.1)
+    contrast(1.05);
+}
+
+.culinary-sketch {
+  position: absolute;
+
+  width: 105px;
+  height: 70px;
+  right: 0;
+  top: 23px;
+
+  color: #f3b65a;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   05 — MENU ITEMS
+   Elegant restaurant-menu rhythm and price alignment.
+   ========================================================== */
+
+.menu-item,
+.theme-pizza .menu-item,
+.sparse-page .menu-item {
+  padding: 13px 0 14px;
+
+  border-bottom:
+    1px solid #c59b6229;
+}
+
+.item-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 4.3cqw, 22px);
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.012em;
+
+  color: #fff5e8;
+  max-width: 80%;
+}
+
+.item-price {
+  color: #ffaf40;
+
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 3.8cqw, 20px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-dots {
+  border-color: #d0b69a59;
+}
+
+.item-description {
+  color: #cbbdaf;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.item-meta {
+  color: #c7b69e;
+
+  font-size: 9px;
+  letter-spacing: 0.35px;
+}
+
+.diet-mark {
+  border-color: #a7bb83;
+}
+
+.diet-mark::after {
+  background: #a7bb83;
+}
+
+.item-preview {
+  color: var(--gold);
+}
+
+.unavailable .item-name {
+  color: #bdb2a6;
+}
+
+.unavailable .item-meta {
+  color: #f3b65a;
+}
+
+.page-note {
+  color: #f0cc9c;
+
+  font-family: Caveat, cursive;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  margin-top: 16px;
+}
+
+.page-note > span {
+  color: #ff9416;
+}
+
+.page-folio {
+  color: #d0b693;
+  border-color: #a375484d;
+}
+
+.printed-contact {
+  color: #d4b58e;
+}
+
+/* ==========================================================
+   06 — PIZZA
+   Oversized cut-out editorial photography.
+   Food enters from the right; type stays readable.
+   ========================================================== */
+
+.theme-pizza .chapter-heading {
+  position: relative;
+  min-height: 225px;
+  padding-bottom: 12px;
+}
+
+.theme-pizza .chapter-heading h2 {
+  position: relative;
+  z-index: 3;
+}
+
+.theme-pizza .chapter-heading p {
+  max-width: 53%;
+}
+
+.theme-pizza .handwritten-accent {
+  max-width: 72%;
+}
+
+.theme-pizza .category-photo,
+.theme-pizza.sparse-page .category-photo {
+  position: absolute;
+
+  top: 33px;
+  right: -42px;
+
+  width: 112%;
+  height: 315px;
+
+  margin: 0;
+  border-radius: 0;
+  aspect-ratio: auto;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 3%,
+      #000 57%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0%,
+      #000 30%,
+      #000 83%,
+      transparent 100%
+    );
+
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.theme-pizza .category-photo img {
+  object-position: 72% 55%;
+}
+
+.theme-pizza .menu-list {
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+}
+
+.theme-pizza .page-note {
+  clear: none;
+}
+
+/* ==========================================================
+   07 — COFFEE
+   Atmospheric oval pool of light.
+   ========================================================== */
+
+.theme-coffee .category-photo,
+.theme-coffee.sparse-page .category-photo {
+  width: 96%;
+  height: clamp(155px, 24svh, 235px);
+
+  margin: -8px -13px 4px auto;
+  border-radius: 0;
+
+  mask-image: radial-gradient(
+    ellipse at 55% 49%,
+    #000 36%,
+    #000 53%,
+    transparent 76%
+  );
+}
+
+.theme-coffee .category-photo img {
+  object-position: 50% 54%;
+}
+
+/* ==========================================================
+   08 — BREAKFAST
+   Asymmetric food photograph with floating detail.
+   ========================================================== */
+
+.theme-breakfast .category-photo,
+.theme-breakfast.sparse-page .category-photo {
+  width: 88%;
+  height: clamp(145px, 23svh, 220px);
+
+  margin: 0 -15px 16px auto;
+  border-radius: 0;
+
+  clip-path: polygon(
+    7% 0,
+    100% 0,
+    100% 92%,
+    0 100%
+  );
+}
+
+.theme-breakfast .category-photo img {
+  object-position: 50% 50%;
+}
+
+.breakfast-detail {
+  position: absolute;
+
+  top: 235px;
+  left: 0;
+
+  width: 32%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  border: 3px solid #e6ac635e;
+
+  box-shadow:
+    0 7px 24px #0008,
+    0 0 0 1px #fff0cf20;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   09 — DESSERT
+   Final-course editorial. Menu first, photograph below.
+   ========================================================== */
+
+.theme-dessert .page-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-dessert .page-topline {
+  order: 0;
+}
+
+.theme-dessert .chapter-heading {
+  order: 1;
+}
+
+.theme-dessert .menu-list {
+  order: 2;
+}
+
+.theme-dessert .category-photo,
+.theme-dessert.sparse-page .category-photo {
+  order: 3;
+  flex-shrink: 0;
+
+  width: calc(100% + 30px);
+  height: clamp(140px, 22svh, 220px);
+
+  margin: 12px -15px 0;
+  border-radius: 0;
+
+  mask-image: linear-gradient(
+    0deg,
+    #000 0%,
+    #000 70%,
+    transparent 100%
+  );
+}
+
+.theme-dessert .category-photo img,
+.preview-photo img[src*="dessert"] {
+  object-position: 50% 85% !important;
+}
+
+.theme-dessert .page-note {
+  order: 4;
+  margin-top: 5px;
+}
+
+/* ==========================================================
+   10 — DRINKS
+   Premium arched photography and centred editorial type.
+   ========================================================== */
+
+.theme-drinks .category-photo,
+.theme-drinks.sparse-page .category-photo {
+  width: 74%;
+  height: clamp(175px, 27svh, 250px);
+
+  margin: 0 auto 9px;
+
+  border-radius: 48% 48% 2px 2px;
+  border: 1px solid #b079465e;
+
+  box-shadow:
+    0 12px 24px #0006,
+    0 0 0 3px #b0794612;
+}
+
+.theme-drinks .category-photo img {
+  object-position: 50% 50%;
+}
+
+.theme-drinks .chapter-heading {
+  text-align: center;
+}
+
+.theme-drinks .handwritten-accent::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.theme-drinks .chapter-heading p {
+  margin: auto;
+}
+
+/* ==========================================================
+   11 — PREMIUM FRONT COVER
+   Dark chocolate leather, copper foil and warm typography.
+   ========================================================== */
+
+.cover-page {
+  background:
+    radial-gradient(
+      ellipse at 50% 28%,
+      #58371b7d,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 50% 110%,
+      #45250e55,
+      transparent 60%
+    ),
+    #11100f;
+
+  color: var(--ivory);
+}
+
+.cover-page::before,
+.cover-frame {
+  border-color: #c18b4d91;
+  outline-color: #d69b4936;
+}
+
+.cover-frame::before,
+.cover-frame::after {
+  background: #171310;
+  border-color: #c18b4d;
+}
+
+.cover-name {
+  color: #ffad39;
+  text-shadow: 0 3px 18px #ff941619;
+}
+
+.cover-name > span,
+.cover-top,
+.brand-lockup p {
+  color: #e7bb80;
+}
+
+.brand-lockup {
+  margin-top: clamp(24px, 4svh, 44px);
+}
+
+.brand-rule {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f0b66e,
+    transparent
+  );
+}
+
+.cover-invitation {
+  font-family: Caveat, cursive;
+  font-weight: 400;
+
+  font-size: clamp(29px, 9cqw, 44px);
+  line-height: 1.12;
+
+  color: #ffe1b9;
+  margin-top: 20px;
+}
+
+.cover-leaf {
+  color: #d2974e;
+  opacity: 0.3;
+}
+
+/* ==========================================================
+   12 — TODAY'S SPECIAL
+   ========================================================== */
+
+.special-feature {
+  border-color: #bf8a486b;
+  padding-top: 12px;
+}
+
+.special-feature > .photograph {
+  height: clamp(130px, 24svh, 240px);
+
+  mask-image: linear-gradient(
+    0deg,
+    #000 75%,
+    transparent 100%
+  );
+}
+
+.special-feature > .photograph img {
+  filter:
+    saturate(1.15)
+    contrast(1.08);
+}
+
+.special-title {
+  font-family: Caveat, cursive;
+  font-size: 32px;
+  color: #f3b65a;
+}
+
+.special-copy > .eyebrow,
+.special-dish,
+.special-note {
+  color: #e4cdb0;
+}
+
+.special-price {
+  color: #ffad39;
+  font-size: 18px;
+}
+
+.cover-bottom {
+  color: #c9b69d;
+}
+
+.cover-page .printed-contact {
+  color: #f3b65a;
+  bottom: 35px;
+}
+
+/* ==========================================================
+   13 — STORY & FINAL PAGES
+   ========================================================== */
+
+.info-page h2 {
+  color: #ffad39;
+}
+
+.cafe-story,
+.info-details > p,
+.demo-contact {
+  color: #cbbdad;
+}
+
+.info-details h3 {
+  color: #f3b65a;
+}
+
+.info-leaf,
+.endpaper > svg {
+  color: #d1964e;
+}
+
+.closing-note {
+  font-family: Caveat, cursive;
+  color: #f3b65a;
+}
+
+.endpaper > span {
+  color: #c9bdb0;
+}
+
+/* ==========================================================
+   14 — DISH PREVIEW MODAL
+   ========================================================== */
+
+.preview-dialog {
+  background:
+    radial-gradient(
+      ellipse at 90% 0,
+      #45302050,
+      transparent 58%
+    ),
+    #1c1917;
+
+  color: #fff5e8;
+  border-color: #8e623e;
+
+  box-shadow:
+    0 30px 100px #000c,
+    inset 0 0 0 1px #f3b65a12;
+}
+
+.preview-dialog::backdrop {
+  background: #090706c9;
+}
+
+.preview-close {
+  background: #1c1917;
+  color: #fff5e8;
+  border-color: #a87543;
+}
+
+.preview-close:hover {
+  background: #4b321e;
+}
+
+.preview-title-row > span,
+.preview-content > .eyebrow,
+.preview-content h3 {
+  color: #ffad39;
+}
+
+.preview-content > p {
+  color: #d2c4b5;
+}
+
+.dietary-tags > span {
+  background: #30271f;
+  color: #f0d4ae;
+  border-color: #80603c;
+}
+
+.dietary-tags > .out-of-stock {
+  background: #452a1a;
+  color: #ffcb90;
+  border-color: #aa7344;
+}
+
+.preview-content .allergy-note {
+  border-color: #725236;
+}
+
+.photo-placeholder {
+  color: #e7bd87;
+}
+
+/* ==========================================================
+   15 — PHYSICAL CORNER TURN
+   ========================================================== */
+
+.corner-turn::before {
+  background: linear-gradient(
+    135deg,
+    transparent 49%,
+    #0008 50%,
+    #77634b 57%,
+    #c5b69c 100%
+  );
+}
+
+.corner-turn span {
+  color: #fff5e8;
+}
+
+/* ==========================================================
+   16 — MOBILE DESIGN
+   ========================================================== */
+
+@media (max-width: 760px) {
+
+  .chapter-heading h2,
+  .modern-type .chapter-heading h2 {
+    font-size: clamp(42px, 17cqw, 68px);
+  }
+
+  .chapter-heading {
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+
+  .chapter-heading p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .handwritten-accent {
+    font-size: 29px;
+    margin: 6px 0 14px;
+  }
+
+  .menu-item,
+  .theme-pizza .menu-item,
+  .sparse-page .menu-item {
+    padding: 12px 0;
+  }
+
+  .item-name {
+    font-size: 18px;
+  }
+
+  .item-price {
+    font-size: 16px;
+  }
+
+  .item-description {
+    font-size: 12px;
+  }
+
+  .theme-pizza .chapter-heading {
+    min-height: 240px;
+  }
+
+  .theme-pizza .category-photo,
+  .theme-pizza.sparse-page .category-photo {
+    top: 43px;
+    height: 300px;
+    right: -34px;
+    width: 115%;
+  }
+
+  .theme-coffee .category-photo,
+  .theme-coffee.sparse-page .category-photo {
+    height: 170px;
+  }
+
+  .theme-breakfast .category-photo,
+  .theme-breakfast.sparse-page .category-photo {
+    height: 175px;
+  }
+
+  .breakfast-detail {
+    top: 220px;
+    width: 34%;
+  }
+
+  .theme-dessert .category-photo,
+  .theme-dessert.sparse-page .category-photo {
+    height: 150px;
+  }
+
+  .theme-drinks .category-photo,
+  .theme-drinks.sparse-page .category-photo {
+    height: 190px;
+  }
+
+  .page-note {
+    font-size: 19px;
+    margin-top: 12px;
+  }
+
+  .brand-lockup {
+    margin-top: 32px;
+  }
+
+  .cover-invitation {
+    font-size: 35px;
+    margin-top: 20px;
+  }
+
+  .special-feature > .photograph {
+    height: 200px;
+  }
+
+  .special-title {
+    font-size: 28px;
+  }
+
+  .culinary-sketch {
+    width: 80px;
+  }
+}
+
+/* ==========================================================
+   17 — SHORT VIEWPORTS
+   ========================================================== */
+
+@media (max-height: 720px) {
+
+  .chapter-heading h2,
+  .modern-type .chapter-heading h2 {
+    font-size: clamp(35px, 13cqw, 56px);
+  }
+
+  .handwritten-accent {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .chapter-heading p {
+    font-size: 12px;
+  }
+
+  .theme-pizza .chapter-heading {
+    min-height: 175px;
+  }
+
+  .theme-pizza .category-photo,
+  .theme-pizza.sparse-page .category-photo {
+    top: 35px;
+    height: 230px;
+  }
+
+  .theme-coffee .category-photo,
+  .theme-coffee.sparse-page .category-photo,
+  .theme-breakfast .category-photo,
+  .theme-breakfast.sparse-page .category-photo,
+  .theme-dessert .category-photo,
+  .theme-dessert.sparse-page .category-photo,
+  .theme-drinks .category-photo,
+  .theme-drinks.sparse-page .category-photo {
+    height: 110px;
+  }
+
+  .breakfast-detail {
+    top: 180px;
+    width: 27%;
+  }
+
+  .menu-item,
+  .theme-pizza .menu-item,
+  .sparse-page .menu-item {
+    padding: 10px 0;
+  }
+
+  .item-description {
+    font-size: 12px;
+  }
+
+  .brand-lockup {
+    margin-top: 22px;
+  }
+
+  .cover-invitation {
+    font-size: 26px;
+    margin-top: 14px;
+  }
+
+  .special-feature > .photograph {
+    height: 120px;
+  }
+
+  .special-title {
+    font-size: 24px;
+  }
+}
+
+/* ==========================================================
+   18 — TALL MOBILE VIEWPORTS
+   ========================================================== */
+
+@media (max-width: 760px) and (min-height: 721px) {
+
+  .chapter-heading {
+    margin: 16px 0 10px;
+  }
+
+  .handwritten-accent {
+    font-size: 26px;
+    margin: 4px 0 10px;
+  }
+
+  .handwritten-accent::after {
+    margin-top: 5px;
+  }
+
+  .chapter-heading p {
+    line-height: 1.4;
+  }
+
+  .menu-item,
+  .theme-pizza .menu-item,
+  .sparse-page .menu-item {
+    padding: 11px 0;
+  }
+
+  .page-note {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+
+  .theme-coffee .category-photo,
+  .theme-coffee.sparse-page .category-photo {
+    height: 135px;
+  }
+
+  .theme-breakfast .category-photo,
+  .theme-breakfast.sparse-page .category-photo {
+    height: 125px;
+    margin-bottom: 10px;
+  }
+
+  .breakfast-detail {
+    top: 208px;
+    width: 29%;
+  }
+
+  .theme-dessert .category-photo,
+  .theme-dessert.sparse-page .category-photo {
+    height: 125px;
+  }
+
+  .theme-drinks .category-photo,
+  .theme-drinks.sparse-page .category-photo {
+    height: 135px;
+  }
+
+  .sparse-page .category-photo {
+    height: 230px;
+  }
+
+  .theme-pizza.sparse-page .category-photo {
+    height: 300px;
+  }
+}
+
+/* ==========================================================
+   19 — DESKTOP AND LARGE BOOKS
+   ========================================================== */
+
+@media (min-width: 761px) and (min-height: 721px) {
+
+  .chapter-heading h2,
+  .modern-type .chapter-heading h2 {
+    font-size: clamp(44px, 15cqw, 80px);
+  }
+
+  .handwritten-accent {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .theme-breakfast .category-photo,
+  .theme-breakfast.sparse-page .category-photo {
+    height: 140px;
+  }
+
+  .breakfast-detail {
+    top: 255px;
+    width: 27%;
+  }
+
+  .theme-coffee .category-photo,
+  .theme-coffee.sparse-page .category-photo,
+  .theme-drinks .category-photo,
+  .theme-drinks.sparse-page .category-photo {
+    height: 150px;
+  }
+
+  .theme-dessert .category-photo,
+  .theme-dessert.sparse-page .category-photo {
+    height: 140px;
+  }
+
+  .menu-item,
+  .theme-pizza .menu-item,
+  .sparse-page .menu-item {
+    padding: 10px 0;
+  }
+
+  .page-note {
+    font-size: 18px;
+  }
+
+  .sparse-page .category-photo {
+    height: 260px;
+  }
+
+  .theme-pizza.sparse-page .category-photo {
+    height: 300px;
+  }
+}
